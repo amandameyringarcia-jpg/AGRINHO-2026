@@ -9,7 +9,7 @@ body {
 /* Cabeçalho */
 header {
     background: linear-gradient(135deg, #2e7d32, #1b5e20);
-    color: white;
+    color: light_green;
     padding: 3rem 1rem;
     text-align: center;
 }
@@ -24,7 +24,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: green;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
