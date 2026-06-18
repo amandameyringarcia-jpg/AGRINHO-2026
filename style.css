@@ -3,13 +3,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
-    color: #333;
+    color: lightgreen;
 }
 
 /* Cabeçalho */
 header {
     background: linear-gradient(135deg, #2e7d32, #1b5e20);
-    color: light_green;
+    color: lightgreen;
     padding: 3rem 1rem;
     text-align: center;
 }
