@@ -9,7 +9,7 @@ body {
 /* Cabeçalho */
 header {
     background: linear-gradient(135deg, #2e7d32, #1b5e20);
-    color: lightgreen;
+    color: black;
     padding: 3rem 1rem;
     text-align: center;
 }
