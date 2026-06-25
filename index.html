@@ -3,92 +3,371 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agronomia Sustentável</title>
+  <title>Agro forte, futuro sustentável</title>
+  <meta name="description" content="Equilíbrio entre produção agrícola e meio ambiente: tecnologia, sustentabilidade e inovação no campo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <nav>
-      <button id="botao-menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
-      <ul id="menu-navegacao">
-        <li><a href="#praticas">Práticas</a></li>
-        <li><a href="#clima">Clima</a></li>
-        <li><a href="#calculadora">Calculadora</a></li>
-        <li><a href="#contato">Contato</a></li>
+  <!-- ==================================================================
+       CABEÇALHO
+       ================================================================== -->
+  <header class="cabecalho">
+    <nav class="nav">
+      <a href="#topo" class="marca">
+        <span class="marca__icone" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4C16 4 7 9 7 17C7 22 11 26 16 26C21 26 25 22 25 17C25 9 16 4 16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 26V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="marca__texto">Agro<strong>Forte</strong></span>
+      </a>
+
+      <button id="botao-menu" class="botao-menu" aria-expanded="false" aria-controls="menu-navegacao" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="menu-navegacao" class="menu">
+        <li><a href="#producao" data-secao="producao">Produção</a></li>
+        <li><a href="#sustentabilidade" data-secao="sustentabilidade">Sustentabilidade</a></li>
+        <li><a href="#desafios" data-secao="desafios">Desafios</a></li>
+        <li><a href="#solucoes" data-secao="solucoes">Soluções</a></li>
+        <li><a href="#contato" data-secao="contato" class="menu__cta">Contato</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="praticas">
-      <h2>Práticas Sustentáveis</h2>
+  <main id="topo">
 
-      <input type="search" id="campo-busca" placeholder="Buscar prática..." />
+    <!-- ==================================================================
+         HERO / BANNER PRINCIPAL
+         ================================================================== -->
+    <section class="hero">
+      <div class="hero__campo">
+        <div class="hero__conteudo">
+          <p class="hero__eyebrow">Agro forte, futuro sustentável</p>
+          <h1 class="hero__titulo">Equilíbrio entre produção e meio ambiente</h1>
+          <p class="hero__slogan">“Cultivando tecnologia, preservando a natureza.”</p>
+          <div class="hero__acoes">
+            <a href="#producao" class="botao botao--solido">Explorar conteúdo</a>
+            <a href="#contato" class="botao botao--contorno">Falar com a equipe</a>
+          </div>
+        </div>
 
-      <div class="filtros">
-        <button class="botao-filtro botao-filtro--ativo" data-categoria="todas">Todas</button>
-        <button class="botao-filtro" data-categoria="solo">Solo</button>
-        <button class="botao-filtro" data-categoria="agua">Água</button>
-        <button class="botao-filtro" data-categoria="biodiversidade">Biodiversidade</button>
+        <div class="hero__indicadores" aria-hidden="true">
+          <span class="indicador indicador--solo">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 18c3-2 6 2 9 0s6-2 9 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Solo
+          </span>
+          <span class="indicador indicador--agua">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c2 4 6 7.5 6 11.5a6 6 0 0 1-12 0C6 10.5 10 7 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Água
+          </span>
+          <span class="indicador indicador--tecnologia">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 19h6M12 15v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Tecnologia
+          </span>
+        </div>
       </div>
 
-      <div id="lista-praticas"></div>
+      <!-- Linha do horizonte: assinatura visual do site -->
+      <svg class="hero__horizonte" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,80 C 240,40 480,100 720,60 C 960,20 1200,90 1440,50 L1440,120 L0,120 Z" fill="var(--cor-papel)"></path>
+      </svg>
     </section>
 
-    <section id="clima">
-      <h2>Clima Atual</h2>
-      <div id="widget-clima">Carregando dados climáticos...</div>
+    <!-- ==================================================================
+         INTRODUÇÃO
+         ================================================================== -->
+    <section class="introducao">
+      <div class="container container--estreito">
+        <p class="introducao__texto">
+          O agronegócio é essencial para a economia e para a produção de alimentos, mas seu
+          crescimento também traz desafios ambientais. Pensando nisso, apresentamos informações
+          sobre sustentabilidade no campo, mostrando como a tecnologia pode ajudar a aumentar a
+          produtividade agrícola sem prejudicar a natureza. Aqui você encontrará conteúdos sobre
+          inovação, preservação ambiental e soluções sustentáveis que contribuem para um futuro
+          mais equilibrado e consciente.
+        </p>
+      </div>
     </section>
 
-    <section id="calculadora">
-      <h2>Calculadora de Consumo Hídrico</h2>
-      <form id="form-calculadora-hidrica">
-        <label>
-          Área (hectares):
-          <input type="number" name="area" min="0" step="0.1" required />
-        </label>
+    <!-- ==================================================================
+         SEÇÃO 1 — PRODUÇÃO AGRÍCOLA
+         ================================================================== -->
+    <section id="producao" class="secao secao--clara">
+      <div class="container secao__grade">
+        <div class="secao__rotulo-coluna">
+          <span class="secao__numero">01</span>
+          <span class="secao__trilha" aria-hidden="true"></span>
+        </div>
 
-        <label>
-          Tipo de irrigação:
-          <select name="irrigacao">
-            <option value="gotejamento">Gotejamento</option>
-            <option value="aspersao">Aspersão</option>
-            <option value="inundacao">Inundação</option>
-          </select>
-        </label>
+        <div class="secao__corpo">
+          <h2 class="secao__titulo">Produção agrícola</h2>
 
-        <button type="submit">Calcular</button>
-      </form>
-      <p id="resultado-calculadora"></p>
+          <p>
+            A produção agrícola tem apresentado crescimento contínuo nas últimas décadas,
+            impulsionada pelo avanço tecnológico, pela ampliação da produtividade e pela
+            crescente demanda mundial por alimentos. O Brasil se destaca como uma das maiores
+            potências agrícolas do mundo, liderando exportações de produtos como soja, milho,
+            café e carnes, além de desempenhar papel fundamental na segurança alimentar global.
+            O agronegócio representa uma parcela significativa da economia brasileira, gerando
+            empregos, movimentando exportações e contribuindo diretamente para o Produto Interno
+            Bruto (PIB).
+          </p>
+          <p>
+            Ao mesmo tempo, o setor agrícola vem incorporando tecnologias inovadoras que aumentam
+            a eficiência produtiva e reduzem impactos ambientais. Entre elas, destacam-se a
+            agricultura de precisão, o uso de drones, sensores inteligentes, biotecnologia,
+            irrigação automatizada e sistemas de monitoramento climático. Essas soluções permitem
+            otimizar recursos naturais, reduzir desperdícios e promover práticas mais
+            sustentáveis, reforçando a importância da agronomia no equilíbrio entre produção e
+            preservação ambiental.
+          </p>
+
+          <ul class="lista-destaques">
+            <li>Agricultura de precisão</li>
+            <li>Drones e sensores inteligentes</li>
+            <li>Biotecnologia</li>
+            <li>Irrigação automatizada</li>
+            <li>Monitoramento climático</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <form id="form-contato">
-        <label>
-          Nome:
-          <input type="text" name="nome" required />
-        </label>
+    <!-- ==================================================================
+         SEÇÃO 2 — SUSTENTABILIDADE
+         ================================================================== -->
+    <section id="sustentabilidade" class="secao secao--verde">
+      <div class="container secao__grade">
+        <div class="secao__rotulo-coluna">
+          <span class="secao__numero">02</span>
+          <span class="secao__trilha" aria-hidden="true"></span>
+        </div>
 
-        <label>
-          E-mail:
-          <input type="email" name="email" required />
-        </label>
+        <div class="secao__corpo">
+          <h2 class="secao__titulo">Sustentabilidade</h2>
 
-        <label>
-          Mensagem:
-          <textarea name="mensagem" rows="4" required></textarea>
-        </label>
+          <p>
+            A sustentabilidade na agronomia envolve a adoção de práticas ecológicas que promovem
+            o equilíbrio entre produção agrícola e preservação ambiental. Técnicas como rotação
+            de culturas, plantio direto, reaproveitamento de resíduos orgânicos e uso consciente
+            da água ajudam a reduzir impactos ambientais e garantir uma produção mais eficiente e
+            responsável.
+          </p>
+          <p>
+            A conservação do solo é um dos pilares desse processo, pois mantém a fertilidade da
+            terra e previne problemas como erosão e degradação. O uso de cobertura vegetal,
+            adubação natural e manejo sustentável contribui para a proteção dos recursos naturais
+            e para a produtividade a longo prazo.
+          </p>
+          <p>
+            Além disso, a utilização de energias limpas no campo, como energia solar e
+            biodigestores, vem transformando o setor agrícola ao reduzir emissões de poluentes e
+            otimizar o consumo energético. Essas soluções fortalecem uma agronomia moderna,
+            sustentável e preparada para os desafios ambientais do futuro.
+          </p>
 
-        <button type="submit">Enviar</button>
-      </form>
+          <div class="cartoes-pilares">
+            <article class="cartao-pilar">
+              <h3>Conservação do solo</h3>
+              <p>Cobertura vegetal e adubação natural mantêm a fertilidade da terra.</p>
+            </article>
+            <article class="cartao-pilar">
+              <h3>Uso consciente da água</h3>
+              <p>Irrigação racional e reaproveitamento reduzem o desperdício hídrico.</p>
+            </article>
+            <article class="cartao-pilar">
+              <h3>Energias limpas</h3>
+              <p>Energia solar e biodigestores diminuem emissões no campo.</p>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- ==================================================================
+         SEÇÃO 3 — DESAFIOS AMBIENTAIS
+         ================================================================== -->
+    <section id="desafios" class="secao secao--escura">
+      <div class="container secao__grade">
+        <div class="secao__rotulo-coluna">
+          <span class="secao__numero">03</span>
+          <span class="secao__trilha" aria-hidden="true"></span>
+        </div>
+
+        <div class="secao__corpo">
+          <h2 class="secao__titulo">Desafios ambientais</h2>
+
+          <p>
+            Os desafios ambientais representam uma das maiores preocupações da agricultura
+            moderna, especialmente diante do crescimento da demanda por alimentos e da
+            necessidade de preservar os recursos naturais. Problemas como desmatamento, erosão do
+            solo, escassez de água, poluição causada por resíduos agrícolas e mudanças climáticas
+            afetam diretamente a produtividade e o equilíbrio dos ecossistemas.
+          </p>
+          <p>
+            As consequências desses impactos incluem perda da fertilidade do solo, redução da
+            biodiversidade, aumento das temperaturas e maior ocorrência de eventos climáticos
+            extremos, como secas e enchentes. Diante desse cenário, a agronomia sustentável se
+            torna essencial para desenvolver soluções que conciliam produção agrícola,
+            conservação ambiental e qualidade de vida para as futuras gerações.
+          </p>
+
+          <div class="grade-riscos">
+            <div class="risco"><span class="risco__rotulo">Causa</span>Desmatamento</div>
+            <div class="risco"><span class="risco__rotulo">Causa</span>Erosão do solo</div>
+            <div class="risco"><span class="risco__rotulo">Causa</span>Escassez de água</div>
+            <div class="risco"><span class="risco__rotulo">Causa</span>Poluição agrícola</div>
+            <div class="risco risco--consequencia"><span class="risco__rotulo">Efeito</span>Perda de biodiversidade</div>
+            <div class="risco risco--consequencia"><span class="risco__rotulo">Efeito</span>Secas e enchentes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SEÇÃO 4 — SOLUÇÕES E FUTURO
+         ================================================================== -->
+    <section id="solucoes" class="secao secao--azul">
+      <div class="container secao__grade">
+        <div class="secao__rotulo-coluna">
+          <span class="secao__numero">04</span>
+          <span class="secao__trilha" aria-hidden="true"></span>
+        </div>
+
+        <div class="secao__corpo">
+          <h2 class="secao__titulo">Soluções e futuro</h2>
+
+          <p>
+            As soluções para um futuro mais sustentável na agricultura estão diretamente ligadas
+            à inovação e ao uso inteligente da tecnologia no campo. A agricultura regenerativa
+            vem ganhando destaque por promover práticas que recuperam o solo, aumentam a
+            biodiversidade e fortalecem os ecossistemas, utilizando técnicas como rotação de
+            culturas, cobertura vegetal e manejo sustentável dos recursos naturais.
+          </p>
+          <p>
+            Ao mesmo tempo, tecnologias modernas como agricultura de precisão, drones, sensores,
+            inteligência artificial e monitoramento climático permitem maior eficiência na
+            produção, redução de desperdícios e uso mais consciente da água e dos insumos
+            agrícolas. Essas inovações tornam a agronomia mais produtiva, sustentável e preparada
+            para enfrentar os desafios ambientais, garantindo equilíbrio entre desenvolvimento
+            econômico e preservação do meio ambiente.
+          </p>
+
+          <div class="caminho-futuro">
+            <div class="caminho-futuro__etapa">
+              <span class="caminho-futuro__marca"></span>
+              <h3>Agricultura regenerativa</h3>
+              <p>Recupera o solo e fortalece ecossistemas a longo prazo.</p>
+            </div>
+            <div class="caminho-futuro__etapa">
+              <span class="caminho-futuro__marca"></span>
+              <h3>Tecnologias inteligentes</h3>
+              <p>IA, sensores e drones aumentam a eficiência produtiva.</p>
+            </div>
+            <div class="caminho-futuro__etapa">
+              <span class="caminho-futuro__marca"></span>
+              <h3>Equilíbrio econômico-ambiental</h3>
+              <p>Produção forte sem comprometer os recursos naturais.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SEÇÃO 5 — CONTATO / CONSCIENTIZAÇÃO
+         ================================================================== -->
+    <section id="contato" class="secao secao--contato">
+      <div class="container secao__grade">
+        <div class="secao__rotulo-coluna">
+          <span class="secao__numero">05</span>
+        </div>
+
+        <div class="secao__corpo">
+          <h2 class="secao__titulo">Fale com a gente</h2>
+          <p class="secao__legenda-contato">
+            Dúvidas, sugestões ou parcerias sobre agronomia sustentável — envie sua mensagem.
+          </p>
+
+          <form id="form-contato" class="formulario-contato" novalidate>
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+              <span class="campo__erro" data-erro-para="nome"></span>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required />
+              <span class="campo__erro" data-erro-para="email"></span>
+            </div>
+
+            <div class="campo">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto">
+                <option value="duvida">Tirar uma dúvida</option>
+                <option value="parceria">Propor uma parceria</option>
+                <option value="sugestao">Deixar uma sugestão</option>
+              </select>
+            </div>
+
+            <div class="campo campo--largo">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte um pouco sobre sua propriedade, projeto ou dúvida..." required></textarea>
+              <span class="campo__erro" data-erro-para="mensagem"></span>
+            </div>
+
+            <button type="submit" class="botao botao--solido campo--largo">Enviar mensagem</button>
+          </form>
+
+          <div class="mensagem-final">
+            <p>
+              A construção de um futuro sustentável depende da união entre inovação,
+              responsabilidade ambiental e produção consciente. A agronomia desempenha um papel
+              fundamental nesse processo, desenvolvendo soluções que aumentam a produtividade sem
+              comprometer os recursos naturais. Investir em práticas sustentáveis, tecnologias
+              inteligentes e preservação ambiental é garantir alimentos, qualidade de vida e
+              equilíbrio para as próximas gerações.
+            </p>
+            <p class="mensagem-final__destaque">
+              Uma agronomia forte é o caminho para um futuro mais verde, eficiente e sustentável.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2026 Agronomia Sustentável. Todos os direitos reservados.</p>
+  <!-- ==================================================================
+       RODAPÉ
+       ================================================================== -->
+  <footer class="rodape">
+    <div class="container rodape__linha">
+      <span class="marca marca--rodape">Agro<strong>Forte</strong></span>
+      <nav class="rodape__links">
+        <a href="#producao">Produção</a>
+        <a href="#sustentabilidade">Sustentabilidade</a>
+        <a href="#desafios">Desafios</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+    <p class="rodape__copy">&copy; 2026 Agro Forte. Cultivando tecnologia, preservando a natureza.</p>
   </footer>
+
+  <div id="notificacoes" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
