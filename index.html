@@ -1,75 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Sustentável | Inovação no Campo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agronomia Sustentável</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Cabeçalho principal com o slogan -->
-    <header>
-        <nav>
-            <!-- Aqui você pode inserir seu logo ou menu de navegação -->
-        </nav>
-        <div class="banner-principal">
-            <h1>Cultivando tecnologia, preservando a natureza.</h1>
-        </div>
-    </header>
+  <header>
+    <nav>
+      <button id="botao-menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
+      <ul id="menu-navegacao">
+        <li><a href="#praticas">Práticas</a></li>
+        <li><a href="#clima">Clima</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <!-- Introdução ao tema -->
-        <section id="introducao">
-            <p>O agronegócio é essencial para a economia e para a produção de alimentos, mas seu crescimento também traz desafios ambientais. Pensando nisso, apresentamos  informações sobre sustentabilidade no campo, mostrando como a tecnologia pode ajudar a aumentar a produtividade agrícola sem prejudicar a natureza. Aqui você encontrará conteúdos sobre inovação, preservação ambiental e soluções sustentáveis que contribuem para um futuro mais equilibrado e consciente. 
-</p>
-        </section>
+  <main>
+    <section id="praticas">
+      <h2>Práticas Sustentáveis</h2>
 
-        <!-- Seção 1: Produção -->
-        <section id="producao">
-            <h2>Produção Agrícola</h2>
-            <p>A produção agrícola tem apresentado crescimento contínuo nas últimas décadas, impulsionada pelo avanço tecnológico, pela ampliação da produtividade e pela crescente demanda mundial por alimentos. O Brasil se destaca como uma das maiores potências agrícolas do mundo, liderando exportações de produtos como soja, milho, café e carnes, além de desempenhar papel fundamental na segurança alimentar global. O agronegócio representa uma parcela significativa da economia brasileira, gerando empregos, movimentando exportações e contribuindo diretamente para o Produto Interno Bruto (PIB).
-Ao mesmo tempo, o setor agrícola vem incorporando tecnologias inovadoras que aumentam a eficiência produtiva e reduzem impactos ambientais. Entre elas, destacam-se a agricultura de precisão, o uso de drones, sensores inteligentes, biotecnologia, irrigação automatizada e sistemas de monitoramento climático. Essas soluções permitem otimizar recursos naturais, reduzir desperdícios e promover práticas mais sustentáveis, reforçando a importância da agronomia no equilíbrio entre produção e preservação ambiental.
-</p>
-        </section>
+      <input type="search" id="campo-busca" placeholder="Buscar prática..." />
 
-        <!-- Seção 2: Sustentabilidade -->
-        <section id="sustentabilidade">
-            <h2>Sustentabilidade</h2>
-            <p>A sustentabilidade na agronomia envolve a adoção de práticas ecológicas que promovem o equilíbrio entre produção agrícola e preservação ambiental. Técnicas como rotação de culturas, plantio direto, reaproveitamento de resíduos orgânicos e uso consciente da água ajudam a reduzir impactos ambientais e garantir uma produção mais eficiente e responsável.
-A conservação do solo é um dos pilares desse processo, pois mantém a fertilidade da terra e previne problemas como erosão e degradação. O uso de cobertura vegetal, adubação natural e manejo sustentável contribui para a proteção dos recursos naturais e para a produtividade a longo prazo.
-Além disso, a utilização de energias limpas no campo, como energia solar e biodigestores, vem transformando o setor agrícola ao reduzir emissões de poluentes e otimizar o consumo energético. Essas soluções fortalecem uma agronomia moderna, sustentável e preparada para os desafios ambientais do futuro.
-</p>
-        </section>
+      <div class="filtros">
+        <button class="botao-filtro botao-filtro--ativo" data-categoria="todas">Todas</button>
+        <button class="botao-filtro" data-categoria="solo">Solo</button>
+        <button class="botao-filtro" data-categoria="agua">Água</button>
+        <button class="botao-filtro" data-categoria="biodiversidade">Biodiversidade</button>
+      </div>
 
-        <!-- Seção 3: Desafios -->
-        <section id="desafios">
-            <h2>Desafios Ambientais</h2>
-            <p>Os desafios ambientais representam uma das maiores preocupações da agricultura moderna, especialmente diante do crescimento da demanda por alimentos e da necessidade de preservar os recursos naturais. Problemas como desmatamento, erosão do solo, escassez de água, poluição causada por resíduos agrícolas e mudanças climáticas afetam diretamente a produtividade e o equilíbrio dos ecossistemas.
-As consequências desses impactos incluem perda da fertilidade do solo, redução da biodiversidade, aumento das temperaturas e maior ocorrência de eventos climáticos extremos, como secas e enchentes. Diante desse cenário, a agronomia sustentável se torna essencial para desenvolver soluções que conciliam produção agrícola, conservação ambiental e qualidade de vida para as futuras gerações.
-</p>
-        </section>
+      <div id="lista-praticas"></div>
+    </section>
 
-        <!-- Seção 4: Futuro -->
-        <section id="solucoes">
-            <h2>Soluções e Futuro</h2>
-            <p>As soluções para um futuro mais sustentável na agricultura estão diretamente ligadas à inovação e ao uso inteligente da tecnologia no campo. A agricultura regenerativa vem ganhando destaque por promover práticas que recuperam o solo, aumentam a biodiversidade e fortalecem os ecossistemas, utilizando técnicas como rotação de culturas, cobertura vegetal e manejo sustentável dos recursos naturais.
-Ao mesmo tempo, tecnologias modernas como agricultura de precisão, drones, sensores, inteligência artificial e monitoramento climático permitem maior eficiência na produção, redução de desperdícios e uso mais consciente da água e dos insumos agrícolas. Essas inovações tornam a agronomia mais produtiva, sustentável e preparada para enfrentar os desafios ambientais, garantindo equilíbrio entre desenvolvimento econômico e preservação do meio ambiente.
-</p>
-        </section>
+    <section id="clima">
+      <h2>Clima Atual</h2>
+      <div id="widget-clima">Carregando dados climáticos...</div>
+    </section>
 
-        <!-- Seção 5: Contato -->
-        <section id="contato">
-            <h2>Entre em contato</h2>
-            <form action="#" method="post">
-                <!-- Campos do formulário virão aqui -->
-            </form>
-        </section>
-    </main>
+    <section id="calculadora">
+      <h2>Calculadora de Consumo Hídrico</h2>
+      <form id="form-calculadora-hidrica">
+        <label>
+          Área (hectares):
+          <input type="number" name="area" min="0" step="0.1" required />
+        </label>
 
-    <footer>
-        <p>A construção de um futuro sustentável depende da união entre inovação e responsabilidade ambiental.</p>
-    </footer>
+        <label>
+          Tipo de irrigação:
+          <select name="irrigacao">
+            <option value="gotejamento">Gotejamento</option>
+            <option value="aspersao">Aspersão</option>
+            <option value="inundacao">Inundação</option>
+          </select>
+        </label>
 
+        <button type="submit">Calcular</button>
+      </form>
+      <p id="resultado-calculadora"></p>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form id="form-contato">
+        <label>
+          Nome:
+          <input type="text" name="nome" required />
+        </label>
+
+        <label>
+          E-mail:
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Mensagem:
+          <textarea name="mensagem" rows="4" required></textarea>
+        </label>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Agronomia Sustentável. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
